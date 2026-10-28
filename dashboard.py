@@ -73,7 +73,7 @@ def build_revenue_chart(revenue_df, period):
             strokeWidth=1.5,
             point=alt.OverlayMarkDef(
                 filled=True,
-                size=12 if period == "Daily" else 35,
+                size=30 if period == "Daily" else 60,
             ),
         )
         .encode(
@@ -106,7 +106,7 @@ def build_revenue_chart(revenue_df, period):
             ],
         )
         .properties(height=380)
-    )
+    ).interactive(bind_y=False)
 
 
 def render_sales_tab(orders_df):
